@@ -18,9 +18,9 @@ class Register extends React.Component {
     email: "",
     password: "",
     passwordConfirmation: "",
-    errors: [],
+    errors: [], 
     loading: false,
-    usersRef: firebase.database().ref("users")
+    usersRef: firebase.database().ref("users")   //to get the unique id from firebase
   };
 
   isFormValid = () => {
@@ -131,7 +131,7 @@ class Register extends React.Component {
     return (
       <Grid textAlign="center" verticalAlign="middle" className="app">
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" icon color="orange" textAlign="center">
+          <Header as="h1" icon color="orange" textAlign="center">
             <Icon name="puzzle piece" color="orange" />
             Register for DevChat
           </Header>
