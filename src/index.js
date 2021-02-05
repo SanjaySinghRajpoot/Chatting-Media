@@ -52,7 +52,7 @@ const RootWithAuth = withRouter(
   )(Root)
 );
 
-ReactDOM.render(
+ReactDOM.render(   
   <Provider store={store}>
     <Router>
       <RootWithAuth />
@@ -61,3 +61,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 registerServiceWorker();
+
