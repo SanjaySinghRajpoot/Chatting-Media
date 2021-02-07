@@ -20,7 +20,7 @@ class Register extends React.Component {
     passwordConfirmation: "",
     errors: [], 
     loading: false,
-    usersRef: firebase.database().ref("users")   //to get the unique id from firebase
+    usersRef: firebase.database().ref("users")   //to get the unique id from fireba
   };
 
   isFormValid = () => {
