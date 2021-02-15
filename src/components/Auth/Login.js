@@ -26,7 +26,7 @@ class Login extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = event => {
+  handleSubmit = event => {            //the submit function firebase
     event.preventDefault();
     if (this.isFormValid(this.state)) {
       this.setState({ errors: [], loading: true });
