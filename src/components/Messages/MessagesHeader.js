@@ -1,8 +1,6 @@
 import React from 'react';
-import { MessageHeader } from 'semantic-ui-react';
 import { Header, Segment, Icon, Input} from 'semantic-ui-react';
  
-
 class MessagesHeader extends React.Component{
     render(){
         return(
@@ -21,7 +19,6 @@ class MessagesHeader extends React.Component{
                 name="searchTerm"
                 placeholder="Search Messages"
               />
-
             </Header>
           </Segment> 
         );
