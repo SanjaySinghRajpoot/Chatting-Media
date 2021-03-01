@@ -43,7 +43,8 @@ class FileModal extends React.Component {    // to open new tab to add images an
         <Modal.Content>
           <Input
             onChange={this.addFile}
-            fluid label="File types: jpg,png"
+            fluid 
+            label="File types: jpg,png"
             name="file"
             type="file"
           />
@@ -55,7 +56,6 @@ class FileModal extends React.Component {    // to open new tab to add images an
             inverted
           >
             <Icon name="checkmark" />Send
-
                </Button>
           <Button
             color="red"
@@ -63,10 +63,8 @@ class FileModal extends React.Component {    // to open new tab to add images an
             onClick={closeModal}
           >
             <Icon name="remove" />Cancel
-
                </Button>
         </Modal.Actions>
-
       </Modal>
     )
   }
