@@ -53,7 +53,7 @@ class Messages extends React.Component {
     }, () => this.handleSearchMessages());
   }
 
-  handleSearchMessages = () => {
+  handleSearchMessages = () => {                            //funtion to find the search in the messages 
     const channelMessages = [...this.state.messages];
     const regex = new RegExp(this.state.searchTerm, "gi");
     const searchResults = channelMessages.reduce((acc, message) => {
@@ -65,8 +65,6 @@ class Messages extends React.Component {
     this.setState({searchResults});
 
   };
-
-
 
   countUniqueUsers = (messages) => {
     const uniqueUsers = messages.reduce((acc, message) => {

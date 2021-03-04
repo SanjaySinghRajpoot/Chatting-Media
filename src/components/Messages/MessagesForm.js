@@ -1,6 +1,6 @@
 import React from "react";
 import firebase from "../../firebase";
-import uuidv4 from "uuid/v4"; //for images to upload
+import uuidv4 from "uuid/v4";            //for images to upload
 import { Segment, Button, Input } from "semantic-ui-react";
 import FileModal from "./FileModal";
 import ProgressBar from "./ProgressBar";
@@ -31,9 +31,9 @@ class MessageForm extends React.Component {
     const message = {
       timestamp: firebase.database.ServerValue.TIMESTAMP, //to get the time from the server for the messages and
       user: {
-        id: this.state.user.uid, //data of the user
+        id: this.state.user.uid,           //data of the user
         name: this.state.user.displayName,
-        avatar: this.state.user.photoURL,
+        avatar: this.state.user.photoURL,  
       },
     };
     if (fileUrl !== null) {
@@ -114,7 +114,7 @@ class MessageForm extends React.Component {
                   uploadTask: null,
                 });
               });
-          }
+           }
         );
       }
     );
