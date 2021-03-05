@@ -29,7 +29,7 @@ class Channels extends React.Component {
     // updating list data
     let loadedChannels = [];
     this.state.channelsRef.on("child_added", (snap) => {
-      loadedChannels.push(snap.val()); //pushing names to array
+      loadedChannels.push(snap.val());                        //pushing names to array and 
       this.setState({ channels: loadedChannels }, () => this.setFirstChannel());
     });
   };

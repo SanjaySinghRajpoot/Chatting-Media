@@ -5,7 +5,7 @@ const ProgressBar = ({ uploadState, percentUploaded}) => (
    uploadState && (
       <Progress
         className="progress__bar"
-        percent={percentUploaded}
+        percent= {percentUploaded}
         progress
         indicating
         size="medium" 
