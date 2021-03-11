@@ -6,7 +6,7 @@ import { Segment, Button, Input } from "semantic-ui-react";
 import FileModal from "./FileModal";
 import ProgressBar from "./ProgressBar";
 
-class MessageForm extends React.Component {
+class MessageForm extends React.Component {           
   state = {
     storageRef: firebase.storage().ref(),
     uploadTask: null,
