@@ -1,5 +1,5 @@
 import React from "react";
-import { sidebar, Menu, Divider, Button, Sidebar } from "semantic-ui-react";
+import { Sidebar, Menu, Divider, Button } from "semantic-ui-react";
 
 class ColorPanel extends React.Component {
   render() {

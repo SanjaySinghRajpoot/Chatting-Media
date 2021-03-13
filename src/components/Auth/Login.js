@@ -26,7 +26,7 @@ class Login extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = event => {            //the submit function firebase
+  handleSubmit = event => {
     event.preventDefault();
     if (this.isFormValid(this.state)) {
       this.setState({ errors: [], loading: true });
@@ -46,7 +46,7 @@ class Login extends React.Component {
     }
   };
 
-  isFormValid = ({ email, password }) => email && password;    //validity of the form 
+  isFormValid = ({ email, password }) => email && password;
 
   handleInputError = (errors, inputName) => {
     return errors.some(error => error.message.toLowerCase().includes(inputName))
@@ -108,7 +108,7 @@ class Login extends React.Component {
             </Message>
           )}
           <Message>
-            Don't have an account? <Link to="/register"> Register</Link>
+            Don't have an account? <Link to="/register">Register</Link>
           </Message>
         </Grid.Column>
       </Grid>

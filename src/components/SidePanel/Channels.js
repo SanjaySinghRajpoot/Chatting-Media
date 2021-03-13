@@ -13,11 +13,10 @@ class Channels extends React.Component {
     channelDetails: "",
     channelsRef: firebase.database().ref("channels"),
     modal: false,
-    firstLoad: true,
+    firstLoad: true
   };
 
   componentDidMount() {
-    //to update the channels list on the site
     this.addListeners();
   }
 
@@ -26,10 +25,9 @@ class Channels extends React.Component {
   }
 
   addListeners = () => {
-    // updating list data
     let loadedChannels = [];
-    this.state.channelsRef.on("child_added", (snap) => {
-      loadedChannels.push(snap.val());                        //pushing names to array and 
+    this.state.channelsRef.on("child_added", snap => {
+      loadedChannels.push(snap.val());
       this.setState({ channels: loadedChannels }, () => this.setFirstChannel());
     });
   };
@@ -39,7 +37,6 @@ class Channels extends React.Component {
   };
 
   setFirstChannel = () => {
-    //when you open the app this will set the first channel
     const firstChannel = this.state.channels[0];
     if (this.state.firstLoad && this.state.channels.length > 0) {
       this.props.setCurrentChannel(firstChannel);
@@ -59,8 +56,8 @@ class Channels extends React.Component {
       details: channelDetails,
       createdBy: {
         name: user.displayName,
-        avatar: user.photoURL,
-      },
+        avatar: user.photoURL
+      }
     };
 
     channelsRef
@@ -71,34 +68,34 @@ class Channels extends React.Component {
         this.closeModal();
         console.log("channel added");
       })
-      .catch((err) => {
+      .catch(err => {
         console.error(err);
       });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     if (this.isFormValid(this.state)) {
       this.addChannel();
     }
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  changeChannel = (channel) => {
+  changeChannel = channel => {
     this.setActiveChannel(channel);
     this.props.setCurrentChannel(channel);
   };
 
-  setActiveChannel = (channel) => {
+  setActiveChannel = channel => {
     this.setState({ activeChannel: channel.id });
   };
 
-  displayChannels = (channels) =>
+  displayChannels = channels =>
     channels.length > 0 &&
-    channels.map((channel) => (
+    channels.map(channel => (
       <Menu.Item
         key={channel.id}
         onClick={() => this.changeChannel(channel)}
@@ -122,7 +119,7 @@ class Channels extends React.Component {
 
     return (
       <React.Fragment>
-        <Menu.Menu className="menu">
+        <Menu.Menu style={{ paddingBottom: "2em" }}>
           <Menu.Item>
             <span>
               <Icon name="exchange" /> CHANNELS
@@ -171,4 +168,7 @@ class Channels extends React.Component {
   }
 }
 
-export default connect(null, { setCurrentChannel })(Channels);
+export default connect(
+  null,
+  { setCurrentChannel }
+)(Channels);

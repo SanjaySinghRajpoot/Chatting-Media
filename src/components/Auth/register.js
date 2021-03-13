@@ -18,9 +18,9 @@ class Register extends React.Component {
     email: "",
     password: "",
     passwordConfirmation: "",
-    errors: [], 
+    errors: [],
     loading: false,
-    usersRef: firebase.database().ref("users")   //to get the unique id from fireba
+    usersRef: firebase.database().ref("users")
   };
 
   isFormValid = () => {

@@ -27,9 +27,9 @@ const App = ({ currentUser, currentChannel }) => (
   </Grid>
 );
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   currentUser: state.user.currentUser,
-  currentChannel: state.channel.currentChannel,
+  currentChannel: state.channel.currentChannel
 });
 
 export default connect(mapStateToProps)(App);

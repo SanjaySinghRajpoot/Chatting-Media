@@ -6,8 +6,8 @@ import { Segment, Button, Input } from "semantic-ui-react";
 import FileModal from "./FileModal";
 import ProgressBar from "./ProgressBar";
 
-class MessageForm extends React.Component {           
-  state = {                  
+class MessageForm extends React.Component {
+  state = {
     storageRef: firebase.storage().ref(),
     uploadTask: null,
     uploadState: "",
@@ -20,10 +20,10 @@ class MessageForm extends React.Component {
     modal: false
   };
 
-  openModal = () => this.setState({ modal: true });       // open upstream
- 
-  closeModal = () => this.setState({ modal: false });      // open downstream
- 
+  openModal = () => this.setState({ modal: true });
+
+  closeModal = () => this.setState({ modal: false });
+
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };

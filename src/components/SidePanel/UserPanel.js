@@ -5,7 +5,7 @@ import { Grid, Header, Icon, Dropdown, Image } from "semantic-ui-react";
 class UserPanel extends React.Component {
   state = {
     user: this.props.currentUser
-  }
+  };
 
   dropdownOptions = () => [
     {
@@ -35,7 +35,7 @@ class UserPanel extends React.Component {
   };
 
   render() {
-     const { user } = this.state;
+    const { user } = this.state;
 
     return (
       <Grid style={{ background: "#4c3c4c" }}>
@@ -48,19 +48,20 @@ class UserPanel extends React.Component {
             </Header>
 
             {/* User Dropdown  */}
-          <Header style={{ padding: "0.25em" }} as="h4" inverted>
-            <Dropdown
-              trigger={
-              <span>
-                <Image src= {user.photoURL} spaced="right" avatar/>
-                {user.displayName}
-              </span>}
-              options={this.dropdownOptions()}
-            />
-          </Header>
+            <Header style={{ padding: "0.25em" }} as="h4" inverted>
+              <Dropdown
+                trigger={
+                  <span>
+                    <Image src={user.photoURL} spaced="right" avatar />
+                    {user.displayName}
+                  </span>
+                }
+                options={this.dropdownOptions()}
+              />
+            </Header>
           </Grid.Row>
         </Grid.Column>
-      </Grid> 
+      </Grid>
     );
   }
 }
