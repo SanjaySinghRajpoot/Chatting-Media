@@ -20,9 +20,9 @@ class MessageForm extends React.Component {
     modal: false
   };
 
-  openModal = () => this.setState({ modal: true });
+  openModal = () => this.setState({ modal: true });       //opening upstream
 
-  closeModal = () => this.setState({ modal: false });
+  closeModal = () => this.setState({ modal: false });     //closing upstream
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
