@@ -7,7 +7,7 @@ class MessagesHeader extends React.Component {
       channelName,
       numUniqueUsers,
       handleSearchChange,
-      searchLoading
+      searchLoading,
     } = this.props;
 
     return (
