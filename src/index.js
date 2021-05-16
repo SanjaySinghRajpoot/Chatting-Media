@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 import Login from "./components/Auth/Login";
-import Register from "./components/Auth/Register";
+import Register from "./components/Auth/register";
 import Spinner from "./Spinner";
 import registerServiceWorker from "./registerServiceWorker";
 import firebase from "./firebase";

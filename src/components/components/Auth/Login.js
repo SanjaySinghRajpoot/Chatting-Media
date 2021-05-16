@@ -55,7 +55,7 @@ class Login extends React.Component {
   };
 
   render() {
-    const { email, password, errors, loading } = this.state;
+    const { email, password, errors, loading } = this.state;  // present data sets 
 
     return (
       <Grid textAlign="center" verticalAlign="middle" className="app">
