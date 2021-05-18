@@ -8,6 +8,7 @@ import Message from "./Message";
 
 class Messages extends React.Component {
   state = {
+    privateChannel: this.props.isPrivateChannel,
     messagesRef: firebase.database().ref("messages"),
     messages: [],
     messagesLoading: true,
@@ -91,11 +92,13 @@ class Messages extends React.Component {
       />
     ));
 
-  displayChannelName = (channel) => (channel ? `#${channel.name}` : "");
+  displayChannelName = (channel) => {
+     return channel ? `${this.state.privateChannel ? '@': '#' } ${channel.name} ` : ''; 
+  }
 
   render() {
     // prettier-ignore
-    const { messagesRef, messages, channel, user, numUniqueUsers, searchTerm, searchResults, searchLoading } = this.state;
+    const { messagesRef, messages, channel, user, numUniqueUsers, searchTerm, searchResults, searchLoading, privateChannel } = this.state;
 
     return (
       <React.Fragment>
@@ -104,6 +107,7 @@ class Messages extends React.Component {
           numUniqueUsers={numUniqueUsers}
           handleSearchChange={this.handleSearchChange}
           searchLoading={searchLoading}
+          isPrivateChannel={privateChannel}
         />
 
         <Segment>
@@ -118,6 +122,7 @@ class Messages extends React.Component {
           messagesRef={messagesRef}
           currentChannel={channel}
           currentUser={user}
+          isPrivateChannel={privateChannel}
         />
       </React.Fragment>
     );
