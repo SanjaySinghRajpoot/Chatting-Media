@@ -17,7 +17,7 @@ import {
   withRouter
 } from "react-router-dom";
 
-import { createStore } from "redux";
+import { createStore } from "redux";   // main data variable 
 import { Provider, connect } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from "./reducers";

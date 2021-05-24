@@ -37,6 +37,7 @@ class MessageForm extends React.Component {
         avatar: this.state.user.photoURL
       }
     };
+    
     if (fileUrl !== null) {
       message["image"] = fileUrl;
     } else {
@@ -46,12 +47,12 @@ class MessageForm extends React.Component {
   };
 
   sendMessage = () => {
-    const { messagesRef } = this.props;
-    const { message, channel } = this.state;
+    const { getMessagesRef } = this.props;     //properties 
+    const { message, channel } = this.state;   //states 
 
     if (message) {
       this.setState({ loading: true });
-      messagesRef
+      getMessagesRef()
         .child(channel.id)
         .push()
         .set(this.createMessage())
@@ -72,7 +73,7 @@ class MessageForm extends React.Component {
     }
   };
 
-  getPath = () => {
+  getPath = () => {       // to select the channel ref from Priavte channel or Public channel 
      if(this.props.isPrivateChannel){
        return `chat/private-${this.state.channel.id}`;
      }else{
@@ -82,7 +83,7 @@ class MessageForm extends React.Component {
 
   uploadFile = (file, metadata) => {
     const pathToUpload = this.state.channel.id;
-    const ref = this.props.messagesRef;
+    const ref = this.props.getMessagesRef();
     const filePath = `${this.getPath()}${uuidv4()}.jpg`;
 
     this.setState(
