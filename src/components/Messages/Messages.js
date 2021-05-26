@@ -25,7 +25,7 @@ class Messages extends React.Component {
     const { channel, user } = this.state;
 
     if (channel && user) {
-      this.addListeners(channel.id);
+      this.addListeners(channel.id);   
     }
   }
 
@@ -61,7 +61,7 @@ class Messages extends React.Component {
     );
   };
 
-  handleSearchMessages = () => {
+  handleSearchMessages = () => {     // this function uis created to handle search events
     const channelMessages = [...this.state.messages];
     const regex = new RegExp(this.state.searchTerm, "gi");
     const searchResults = channelMessages.reduce((acc, message) => {
