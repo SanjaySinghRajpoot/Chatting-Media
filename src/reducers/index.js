@@ -6,7 +6,7 @@ const initialUserState = {
   isLoading: true,
 };
 
-const user_reducer = (state = initialUserState, action) => {
+const user_reducer = (state = initialUserState, action) => {  // comment
   switch (action.type) {
     case actionTypes.SET_USER:
       return {
